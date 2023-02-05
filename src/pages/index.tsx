@@ -14,9 +14,8 @@ export default function Home() {
           href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
         />
       </Head>
-      <main>
-        <Header />
-      </main>
+      <Header />
+      <main></main>
     </>
   );
 }
