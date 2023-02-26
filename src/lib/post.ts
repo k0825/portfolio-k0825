@@ -1,6 +1,8 @@
-import { client } from "./client";
 import { z } from "zod";
+
 import { AllPostsData, PostData } from "@/types/post";
+
+import { client } from "./client";
 
 export const getPostsData = async (): Promise<AllPostsData> => {
   const postsDataParser = z.array(

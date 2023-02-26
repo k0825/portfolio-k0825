@@ -1,13 +1,15 @@
-import { Layout } from "@/components/Layout";
-import utilStyles from "@/styles/utils.module.css";
-import Head from "next/head";
+import { ParsedUrlQuery } from "querystring";
+
 import {
   GetStaticPaths,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
+import Head from "next/head";
+
+import { Layout } from "@/components/Layout";
 import { getPostData, getPostsData } from "@/lib/post";
-import { ParsedUrlQuery } from "querystring";
+import utilStyles from "@/styles/utils.module.scss";
 
 type PostProps = InferGetStaticPropsType<typeof getStaticProps>;
 

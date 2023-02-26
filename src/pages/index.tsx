@@ -1,11 +1,13 @@
-import Link from "next/link";
-import Head from "next/head";
-import { Layout } from "../components/Layout";
-import utilStyles from "../styles/utils.module.css";
-import styles from "../styles/Home.module.css";
-import { getPostsData } from "@/lib/post";
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+
+import { getPostsData } from "@/lib/post";
+
+import { Layout } from "../components/Layout";
+import styles from "../styles/Home.module.scss";
+import utilStyles from "../styles/utils.module.scss";
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 

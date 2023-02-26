@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-
-import styles from "./Layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { ReactNode } from "react";
+
+import styles from "./Layout.module.scss";
+import utilStyles from "../styles/utils.module.scss";
 
 const name = "Ikari Code";
 
