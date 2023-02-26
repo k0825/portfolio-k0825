@@ -1,11 +1,15 @@
 import Link from "next/link";
-import Layout from "../components/Layout";
+import Head from "next/head";
+import { Layout } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
 import styles from "../styles/Home.module.css";
-import Head from "next/head";
-import { client } from "@/lib/client";
+import { getPostsData } from "@/lib/post";
+import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 
-export default function Home({ allPostsData }) {
+type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export const Home = ({ allPostsData }: HomeProps) => {
   return (
     <Layout home>
       <Head>
@@ -20,10 +24,12 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, createdAt, title, eyecatch }) => (
             <article key={id}>
               <Link href={`/posts/${id}`}>
-                <img
+                <Image
                   src={eyecatch.url}
                   alt="サムネ"
                   className={styles.thumbnailImage}
+                  width={950}
+                  height={400}
                 />
               </Link>
               <Link href={`/posts/${id}`} className={utilStyles.boldText}>
@@ -37,14 +43,15 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
+};
 
-export async function getStaticProps() {
-  const data = await client.get({ endpoint: "blogs" });
-
+export const getStaticProps = async () => {
+  const allPostsData = await getPostsData();
   return {
     props: {
-      allPostsData: data.contents,
+      allPostsData,
     },
   };
-}
+};
+
+export default Home;

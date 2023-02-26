@@ -1,10 +1,21 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import utilStyles from "@/styles/utils.module.css";
-import { getAllPostIds, getPostData } from "@/lib/post";
 import Head from "next/head";
-import { client } from "@/lib/client";
+import {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+} from "next";
+import { getPostData, getPostsData } from "@/lib/post";
+import { ParsedUrlQuery } from "querystring";
 
-export default function Post({ postData }) {
+type PostProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+interface PostParams extends ParsedUrlQuery {
+  id: string;
+}
+
+export const Post = ({ postData }: PostProps) => {
   return (
     <Layout>
       <Head>
@@ -15,24 +26,28 @@ export default function Post({ postData }) {
       <div dangerouslySetInnerHTML={{ __html: postData.content }}></div>
     </Layout>
   );
-}
+};
 
-export async function getStaticPaths() {
-  const data = await client.get({ endpoint: "blogs" });
-  const paths = data.contents.map((content) => `/posts/${content.id}`);
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPostsData = await getPostsData();
+  const paths = allPostsData.map((content) => {
+    return { params: { id: content.id } };
+  });
 
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const data = await client.get({ endpoint: "blogs", contentId: params.id });
-
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const { id } = params as PostParams;
+  const postData = await getPostData(id);
   return {
     props: {
-      postData: data,
+      postData,
     },
   };
-}
+};
+
+export default Post;
