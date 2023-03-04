@@ -17,12 +17,13 @@ export const getPostsData = async (): Promise<AllPostsData> => {
   return postsDataParser.parse(data.contents);
 };
 
-export const getPostData = async (id?: string): Promise<PostData> => {
+export const getPostData = async (id: string): Promise<PostData> => {
   const postDataParser = z.object({
     title: z.string(),
     createdAt: z.string(),
     content: z.string(),
   });
   const data = await client.get({ endpoint: "blogs", contentId: id });
-  return postDataParser.parse(data.contents);
+  // console.log(data);
+  return postDataParser.parse(data);
 };

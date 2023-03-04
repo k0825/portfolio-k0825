@@ -12,18 +12,6 @@
   align-items: center;
 }
 
-.thumbnailImage {
-  margin-bottom: 20px;
-  box-shadow: 4px 5px 12px black;
-  transition: all 0.3s;
-  cursor: pointer;
-
-  &:hover {
-    transform: translate(4px, 5px);
-    box-shadow: none;
-  }
-}
-
 .grid {
   display: grid;
   flex-wrap: wrap;

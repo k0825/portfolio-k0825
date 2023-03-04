@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 import styles from "./Layout.module.scss";
-import utilStyles from "../styles/utils.module.scss";
+import utilStyles from "@/styles/utils.module.scss";
 
 const name = "Ikari Code";
 

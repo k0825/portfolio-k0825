@@ -7,9 +7,9 @@ import {
 } from "next";
 import Head from "next/head";
 
-import { Layout } from "@/components/Layout";
 import { getPostData, getPostsData } from "@/lib/post";
 import utilStyles from "@/styles/utils.module.scss";
+import { Layout } from "@/components/Layout/Layout";
 
 type PostProps = InferGetStaticPropsType<typeof getStaticProps>;
 
