@@ -5,17 +5,18 @@ import { getPostsData } from "@/lib/post";
 
 import styles from "@/styles/Home.module.scss";
 import utilStyles from "@/styles/utils.module.scss";
-import { Layout } from "@/components/Layout/Layout";
 import { Post } from "@/components/Post/Post";
+import { Header } from "@/components/Header/Header";
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const Home = ({ allPostsData }: HomeProps) => {
   return (
-    <Layout home>
+    <div className={utilStyles.container}>
       <Head>
         <title>Next.js Blog</title>
       </Head>
+      <Header />
       <section className={utilStyles.headingMd}>
         <p>吾輩はエンジニアである。名前はまだない。</p>
       </section>
@@ -34,7 +35,7 @@ export const Home = ({ allPostsData }: HomeProps) => {
           ))}
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

@@ -9,7 +9,7 @@ import Head from "next/head";
 
 import { getPostData, getPostsData } from "@/lib/post";
 import utilStyles from "@/styles/utils.module.scss";
-import { Layout } from "@/components/Layout/Layout";
+import { Header } from "@/components/Header/Header";
 
 type PostProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -19,14 +19,15 @@ interface PostParams extends ParsedUrlQuery {
 
 export const Post = ({ postData }: PostProps) => {
   return (
-    <Layout>
+    <div className={utilStyles.container}>
       <Head>
         <title>{postData.title}</title>
       </Head>
+      <Header />
       <h1 className={utilStyles.headingXl}>{postData.title}</h1>
       <div className={utilStyles.lightText}>{postData.createdAt}</div>
       <div dangerouslySetInnerHTML={{ __html: postData.content }}></div>
-    </Layout>
+    </div>
   );
 };
 
