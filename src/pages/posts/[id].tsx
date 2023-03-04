@@ -10,6 +10,7 @@ import Head from "next/head";
 import { getPostData, getPostsData } from "@/lib/post";
 import utilStyles from "@/styles/utils.module.scss";
 import { Header } from "@/components/Header/Header";
+import Link from "next/link";
 
 type PostProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -27,6 +28,7 @@ export const Post = ({ postData }: PostProps) => {
       <h1 className={utilStyles.headingXl}>{postData.title}</h1>
       <div className={utilStyles.lightText}>{postData.createdAt}</div>
       <div dangerouslySetInnerHTML={{ __html: postData.content }}></div>
+      <Link href="/">←ホームへ戻る</Link>
     </div>
   );
 };
