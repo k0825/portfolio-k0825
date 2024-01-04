@@ -1,8 +1,8 @@
 import { Avatar, Text } from "@mantine/core";
 
-import styles from "./Logo.module.scss";
+import styles from "./Profile.module.scss";
 
-export const Logo = () => {
+export const Profile = () => {
   return (
     <a href="/" className={styles.link}>
       <div className={styles.logo}>
