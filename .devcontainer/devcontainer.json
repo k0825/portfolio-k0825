@@ -28,6 +28,13 @@
 	"customizations": {
 		"vscode": {
 			"settings": {
+				"cssVariables.lookupFiles": [
+					"**/*.css",
+					"**/*.scss",
+					"**/*.sass",
+					"**/*.less",
+					"node_modules/@mantine/core/styles.css"
+				],
 				"editor.formatOnSave": true,
 				// 各ファイルのデフォルトのフォーマッターを指定
 				"[javascript]": {
