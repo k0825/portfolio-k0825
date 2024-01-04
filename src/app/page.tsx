@@ -1,7 +1,15 @@
+import { About } from "@/components/about/About";
+import { Container, Title } from "@mantine/core";
+
 export default function Home() {
   return (
     <main>
-      <h1>main</h1>
+      <Container size="lg" mt={30}>
+        <Title order={1} mb={10}>
+          About me
+        </Title>
+        <About />
+      </Container>
     </main>
   );
 }
