@@ -1,13 +1,13 @@
 import { Container } from "@mantine/core";
 import styles from "./Header.module.scss";
-import { Profile } from "../profile/Profile";
+import { ProfileLogo } from "../profileLogo/ProfileLogo";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <Container size="lg">
         <div className={styles.container}>
-          <Profile />
+          <ProfileLogo />
           <a href="/" className={styles.link}>
             HOME
           </a>
