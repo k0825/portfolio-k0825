@@ -23,6 +23,13 @@ export const About = (): JSX.Element => {
           </a>
         </div>
       </div>
+
+      <div>
+        <p>はじめまして、こんにちは</p>
+        <p>某ISP会社でWebエンジニアをやっています</p>
+        <p>マイペースな自堕落エンジニアです</p>
+        <p>最近はNext.js, Go, AWSをよく触っています</p>
+      </div>
     </section>
   );
 };
