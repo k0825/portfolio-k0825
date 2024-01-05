@@ -1,7 +1,5 @@
+import { Text } from "@mantine/core";
+
 export const Skills = () => {
-  return (
-    <div>
-      <h1>Skills</h1>
-    </div>
-  );
+  return <Text>Next.js, TypeScript, JavaScript, Go, AWS</Text>;
 };
