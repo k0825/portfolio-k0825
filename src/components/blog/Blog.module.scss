@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  gap: 1rem;
+  padding-inline-start: 0;
+}
+
+.item {
+  width: 49%;
+}
+
+.link {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.outer {
+  padding: var(--mantine-spacing-lg);
+
+  border-radius: 8px;
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  }
+}

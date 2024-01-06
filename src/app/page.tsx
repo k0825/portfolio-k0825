@@ -1,4 +1,5 @@
 import { About } from "@/components/about/About";
+import { Blog } from "@/components/blog/Blog";
 import { Experience } from "@/components/experience/Experience";
 import { Skills } from "@/components/skills/Skills";
 import { Container, Title } from "@mantine/core";
@@ -20,6 +21,7 @@ export default function Home() {
         <Title order={1} mt={30} mb={10}>
           Tech Blog
         </Title>
+        <Blog />
 
         <Title order={1} mt={30} mb={10}>
           Qualifications
