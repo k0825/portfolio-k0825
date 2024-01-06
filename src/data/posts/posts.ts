@@ -3,7 +3,7 @@ import Parser from "rss-parser";
 
 type PostItem = {
   title: string;
-  data: string;
+  date: string;
   link: string;
 };
 
@@ -17,7 +17,7 @@ export const getPosts = async (): Promise<Posts> => {
   const items: PostItem[] = feed.items.map((item) => {
     return {
       title: item.title ?? "",
-      data: item.pubDate ? dayjs(item.pubDate).format("YYYY/MM/DD") : "",
+      date: item.pubDate ? dayjs(item.pubDate).format("YYYY-MM-DD") : "",
       link: item.link ?? "https://zenn.dev/ikarin0825",
     };
   });
