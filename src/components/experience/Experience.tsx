@@ -8,7 +8,7 @@ export const Experience = () => {
           2017-4 - 2021-3
         </Text>
       </TimelineItem>
-      <TimelineItem title="ニフティ株式会社 入社">
+      <TimelineItem title="ニフティ株式会社 Webエンジニア">
         <Text c="dimmed" size="sm">
           2021-4 - now
         </Text>
