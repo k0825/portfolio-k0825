@@ -12,7 +12,7 @@ export const Blog = async () => {
         <li key={post.title} className={styles.item}>
           <a href={post.link} className={styles.link} target="_blank">
             <div className={styles.outer}>
-              <Zenn size={40} />
+              <Zenn size={50} />
               <div className={styles.inner}>
                 <Title order={3} fw={"normal"} lineClamp={2}>
                   {post.title}
