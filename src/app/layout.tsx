@@ -5,13 +5,13 @@ import { Footer } from "@/components/footer/Footer";
 import { MantineProvider } from "@mantine/core";
 
 import "@mantine/core/styles.css";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "k0825 portfolio site",
   description: "ポートフォリオサイト",
+  formatDetection: { telephone: false },
 };
 
 export default function RootLayout({
@@ -21,9 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <Head>
-        <meta name="format-detection" content="telephone=no" />
-      </Head>
       <body className={inter.className}>
         <MantineProvider>
           <Header />
