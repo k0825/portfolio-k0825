@@ -17,6 +17,12 @@
   }
 }
 
+@media screen and (max-width: 960px) {
+  .item {
+    width: 100%;
+  }
+}
+
 .link {
   text-decoration: none;
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
