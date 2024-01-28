@@ -1,4 +1,4 @@
-import { getPosts } from "@/data/posts/posts";
+import { getPosts } from "@/data/posts";
 import { Text, Title } from "@mantine/core";
 
 import styles from "./Blog.module.scss";
