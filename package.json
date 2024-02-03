@@ -12,7 +12,6 @@
     "@mantine/core": "^7.4.0",
     "@mantine/hooks": "^7.4.0",
     "@mantinex/mantine-logo": "^1.0.1",
-    "@notionhq/client": "^2.2.14",
     "dayjs": "^1.11.10",
     "next": "14.0.4",
     "react": "^18",
