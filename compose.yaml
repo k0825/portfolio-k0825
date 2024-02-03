@@ -8,4 +8,4 @@ services:
       - ./:/frontend
     ports:
       - 3000:3000
-    command: sh -c "pnpm dev"
+    command: sh -c "yarn dev"
