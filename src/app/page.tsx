@@ -7,14 +7,12 @@ import { Container } from "@mantine/core";
 
 export default function Home() {
   return (
-    <main>
-      <Container size="md" mt={30}>
-        <About />
-        <Skills />
-        <Blog />
-        <Qualifications />
-        <Experience />
-      </Container>
-    </main>
+    <>
+      <About />
+      <Skills />
+      <Blog />
+      <Qualifications />
+      <Experience />
+    </>
   );
 }
