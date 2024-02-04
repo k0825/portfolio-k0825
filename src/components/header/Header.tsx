@@ -1,6 +1,7 @@
-import { Container } from "@mantine/core";
+import { Container, Group } from "@mantine/core";
 import styles from "./Header.module.scss";
 import { ProfileLogo } from "../profileLogo/ProfileLogo";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -8,9 +9,14 @@ export const Header = () => {
       <Container size="lg">
         <div className={styles.container}>
           <ProfileLogo />
-          <a href="/" className={styles.link}>
-            HOME
-          </a>
+          <Group gap={5} visibleFrom="sm">
+            <Link href="/" className={styles.link}>
+              HOME
+            </Link>
+            <Link href="/blog" className={styles.link}>
+              BLOG
+            </Link>
+          </Group>
         </div>
       </Container>
     </header>
