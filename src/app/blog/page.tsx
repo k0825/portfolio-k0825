@@ -9,7 +9,9 @@ export default async function Blog() {
       <ul>
         {contents.map((blog) => (
           <li key={blog.id}>
-            <a href={`/blog/${blog.id}`}>{blog.title}</a>
+            <a href={`/blog/${blog.id}`}>
+              <h2>{blog.title}</h2>
+            </a>
           </li>
         ))}
       </ul>
