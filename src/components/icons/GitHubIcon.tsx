@@ -1,6 +1,6 @@
 import { rem } from "@mantine/core";
 
-export const GitHub = ({ size, color, style, others }: IconType) => {
+export const GitHubIcon = ({ size, color, style, others }: IconType) => {
   return (
     <svg
       viewBox="0 0 97.707 95.435"

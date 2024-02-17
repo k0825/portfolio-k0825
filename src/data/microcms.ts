@@ -11,7 +11,9 @@ export type Blog = {
   id: string;
   title: string;
   content: string;
-  eyecatch?: MicroCMSImage;
+  description: string;
+  eyecatch: MicroCMSImage;
+  category: string[];
 } & MicroCMSDate;
 
 const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN ?? "";
@@ -26,6 +28,7 @@ export const getBlogs = async (
   queries?: MicroCMSQueries
 ): Promise<MicroCMSListResponse<Blog>> => {
   const data = await client.getList<Blog>({ endpoint: "blogs", queries });
+  console.log(data);
   return data;
 };
 

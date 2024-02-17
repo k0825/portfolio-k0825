@@ -1,6 +1,6 @@
 import { rem } from "@mantine/core";
 
-export const X = ({ size, color, style, others }: IconType) => {
+export const XIcon = ({ size, color, style, others }: IconType) => {
   return (
     <svg
       viewBox="0 0 1200 1227"

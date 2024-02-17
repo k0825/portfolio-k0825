@@ -1,6 +1,6 @@
 import { rem } from "@mantine/core";
 
-export const Zenn = ({ size, color, style, others }: IconType) => {
+export const ZennIcon = ({ size, color, style, others }: IconType) => {
   return (
     <svg
       version="1.1"

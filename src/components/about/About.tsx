@@ -1,9 +1,9 @@
 import { Avatar, Title } from "@mantine/core";
 
 import styles from "./About.module.scss";
-import { GitHub } from "../icons/GitHub";
-import { X } from "../icons/X";
-import { Zenn } from "../icons/Zenn";
+import { GitHubIcon } from "../icons/GitHubIcon";
+import { XIcon } from "../icons/XIcon";
+import { ZennIcon } from "../icons/ZennIcon";
 
 export const About = (): JSX.Element => {
   return (
@@ -17,13 +17,13 @@ export const About = (): JSX.Element => {
           <Title order={2}>Kazukiyo Ikarigawa</Title>
           <div className={styles.logos}>
             <a href="https://github.com/k0825">
-              <GitHub size={32} />
+              <GitHubIcon size={32} />
             </a>
             <a href="https://x.com/ikaridev0825">
-              <X size={32} />
+              <XIcon size={32} />
             </a>
             <a href="https://zenn.dev/ikarin0825">
-              <Zenn size={32} />
+              <ZennIcon size={32} />
             </a>
           </div>
         </div>

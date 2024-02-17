@@ -1,3 +1,4 @@
+import { BlogList } from "@/components/blog/blogList/BlogList";
 import { getBlogs } from "@/data/microcms";
 
 export default async function Blog() {
@@ -6,15 +7,7 @@ export default async function Blog() {
   return (
     <div>
       <h1>Blog</h1>
-      <ul>
-        {contents.map((blog) => (
-          <li key={blog.id}>
-            <a href={`/blog/${blog.id}`}>
-              <h2>{blog.title}</h2>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <BlogList contents={contents} />
     </div>
   );
 }
