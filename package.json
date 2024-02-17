@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^7.4.0",
-    "@mantine/hooks": "^7.4.0",
+    "@mantine/core": "^7.5.3",
+    "@mantine/hooks": "^7.5.3",
     "@mantinex/mantine-logo": "^1.0.1",
+    "@tabler/icons-react": "^2.47.0",
     "dayjs": "^1.11.10",
     "html-react-parser": "^5.1.1",
     "microcms-js-sdk": "^2.7.0",
