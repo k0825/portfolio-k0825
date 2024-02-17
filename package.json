@@ -19,6 +19,7 @@
     "react": "^18",
     "react-dom": "^18",
     "rss-parser": "^3.13.0",
+    "zenn-content-css": "^0.1.153",
     "zod": "^3.22.4"
   },
   "devDependencies": {

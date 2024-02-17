@@ -1,3 +1,4 @@
+import "zenn-content-css";
 import parse from "html-react-parser";
 
 type BlogContentProps = {
@@ -6,5 +7,5 @@ type BlogContentProps = {
 
 export const BlogContent = ({ content }: BlogContentProps) => {
   const blog = parse(content);
-  return <div>{blog}</div>;
+  return <div className="znc">{blog}</div>;
 };
