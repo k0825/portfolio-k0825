@@ -1,5 +1,4 @@
-import parse from "html-react-parser";
-
+import { BlogContent } from "@/components/blog/blogContent/BlogContent";
 import { getBlogs, getDetail } from "@/data/microcms";
 
 type BlogDetailPageProps = {
@@ -24,12 +23,10 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { id } = params;
   const blog = await getDetail(id);
 
-  const content = parse(blog.content);
-
   return (
     <div>
       <h1>{blog.title}</h1>
-      <div>{content}</div>
+      <BlogContent content={blog.content} />
     </div>
   );
 }
