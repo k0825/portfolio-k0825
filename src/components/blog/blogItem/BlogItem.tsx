@@ -7,7 +7,6 @@ type BlogItemProps = {
 };
 
 export const BlogItem = ({ content }: BlogItemProps) => {
-  console.log(content);
   return (
     <a href={`/blog/${content.id}`} className={styles.link}>
       <div className={styles.container}>

@@ -28,7 +28,6 @@ export const getBlogs = async (
   queries?: MicroCMSQueries
 ): Promise<MicroCMSListResponse<Blog>> => {
   const data = await client.getList<Blog>({ endpoint: "blogs", queries });
-  console.log(data);
   return data;
 };
 
