@@ -1,20 +1,17 @@
 import { About } from "@/components/about/About";
-import { Blog } from "@/components/blog/Blog";
+import { Zenn } from "@/components/zenn/Zenn";
 import { Experience } from "@/components/experience/Experience";
 import { Qualifications } from "@/components/qualifications/Qualifications";
 import { Skills } from "@/components/skills/Skills";
-import { Container } from "@mantine/core";
 
 export default function Home() {
   return (
-    <main>
-      <Container size="md" mt={30}>
-        <About />
-        <Skills />
-        <Blog />
-        <Qualifications />
-        <Experience />
-      </Container>
-    </main>
+    <>
+      <About />
+      <Skills />
+      <Zenn />
+      <Qualifications />
+      <Experience />
+    </>
   );
 }

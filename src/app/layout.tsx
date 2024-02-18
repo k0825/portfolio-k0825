@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
-import { MantineProvider } from "@mantine/core";
+import { Container, MantineProvider } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -24,7 +24,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <MantineProvider>
           <Header />
-          {children}
+          <main>
+            <Container size="md" mt={30}>
+              {children}
+            </Container>
+          </main>
           <Footer />
         </MantineProvider>
       </body>

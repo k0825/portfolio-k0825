@@ -1,6 +1,6 @@
 import { rem } from "@mantine/core";
 
-export const Zenn = ({ size, color, style, others }: IconType) => {
+export const ZennIcon = ({ size, style, others }: IconType) => {
   return (
     <svg
       version="1.1"
@@ -10,8 +10,9 @@ export const Zenn = ({ size, color, style, others }: IconType) => {
       viewBox="0 0 88.3 88.3"
       style={{ width: rem(size), height: rem(size), ...style }}
       {...others}
+      fill="currentColor"
     >
-      <g fill={color ? color : "black"}>
+      <g>
         <path
           d="M3.9,83.3h17c0.9,0,1.7-0.5,2.2-1.2L69.9,5.2c0.6-1-0.1-2.2-1.3-2.2H52.5c-0.8,0-1.5,0.4-1.9,1.1L3.1,81.9
 		C2.8,82.5,3.2,83.3,3.9,83.3z"
