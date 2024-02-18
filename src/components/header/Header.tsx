@@ -26,7 +26,7 @@ export const Header = () => {
       <Container size="lg">
         <div className={styles.container}>
           <ProfileLogo />
-          <Group gap={5} visibleFrom="sm">
+          <Group gap={5}>
             <Link href="/" className={styles.link}>
               HOME
             </Link>

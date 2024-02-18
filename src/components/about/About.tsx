@@ -16,13 +16,13 @@ export const About = (): JSX.Element => {
           <Avatar src="profile.jpeg" size={120} radius={120} mx="auto" />
           <Title order={2}>Kazukiyo Ikarigawa</Title>
           <div className={styles.logos}>
-            <a href="https://github.com/k0825">
+            <a href="https://github.com/k0825" className={styles.link}>
               <GitHubIcon size={32} />
             </a>
-            <a href="https://x.com/ikaridev0825">
+            <a href="https://x.com/ikaridev0825" className={styles.link}>
               <XIcon size={32} />
             </a>
-            <a href="https://zenn.dev/ikarin0825">
+            <a href="https://zenn.dev/ikarin0825" className={styles.link}>
               <ZennIcon size={32} />
             </a>
           </div>

@@ -1,10 +1,4 @@
-"use client";
-
-import {
-  ActionIcon,
-  useMantineColorScheme,
-  useComputedColorScheme,
-} from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 import clsx from "clsx";
 import styles from "./LightDarkButton.module.scss";
