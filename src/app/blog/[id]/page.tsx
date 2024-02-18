@@ -1,13 +1,15 @@
 import { BlogContent } from "@/components/blog/blogContent/BlogContent";
 import { getBlogs, getDetail } from "@/data/microcms";
 
-type BlogDetailPageProps = {
-  params: {
-    id: string;
-  };
+type Params = {
+  id: string;
 };
 
-export const getStaticParams = async () => {
+type BlogDetailPageProps = {
+  params: Params;
+};
+
+export const generateStaticParams = async (): Promise<Params[]> => {
   const { contents } = await getBlogs();
 
   const paths = contents.map((post) => {
