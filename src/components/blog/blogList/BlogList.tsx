@@ -12,7 +12,11 @@ export const BlogList = ({ contents }: BlogListProps) => {
     <ul className={styles.list}>
       {contents.map((content) => (
         <li key={content.id} className={styles.item}>
-          <BlogItem content={content} />
+          <BlogItem
+            id={content.id}
+            title={content.title}
+            description={content.description}
+          />
         </li>
       ))}
     </ul>
