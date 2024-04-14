@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer/Footer";
 import { Container, MantineProvider } from "@mantine/core";
 
 import "@mantine/core/styles.css";
+import "@mantine/dropzone/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
