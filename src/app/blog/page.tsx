@@ -9,7 +9,6 @@ export default async function Blog() {
     <div>
       <h1>Blog</h1>
       <BlogList contents={contents} />
-      <Drop />
     </div>
   );
 }

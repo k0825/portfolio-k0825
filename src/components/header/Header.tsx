@@ -33,6 +33,9 @@ export const Header = () => {
             <Link href="/blog" className={styles.link}>
               BLOG
             </Link>
+            <Link href="/gallery" className={styles.link}>
+              GALLERY
+            </Link>
             <LightDarkButton useLightDark={useLightDark} />
           </Group>
         </div>
