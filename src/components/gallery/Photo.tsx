@@ -22,6 +22,7 @@ export const Photo = ({ image, displayWidth }: PhotoProps): JSX.Element => {
         alt={id}
         className={styles.photo}
         fill
+        sizes="100vw"
       />
     </div>
   );
