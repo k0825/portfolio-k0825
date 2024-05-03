@@ -15,15 +15,14 @@ export const Photo = ({ image, displayWidth }: PhotoProps): JSX.Element => {
   const displayHeight = displayWidth ? (height / width) * displayWidth : height;
 
   return (
-    <a href={`/gallery/image/${id}`}>
+    <div className={styles.container}>
       <Image
         key={image.id}
         src={`${image_cdn_domain}/${thumb}`}
         alt={id}
-        width={displayWidth}
-        height={displayHeight}
         className={styles.photo}
+        fill
       />
-    </a>
+    </div>
   );
 };

@@ -11,7 +11,9 @@ export const GalleryList = ({ images }: GalleryListProps): JSX.Element => {
     <Grid>
       {images.map((image) => (
         <GridCol key={image.id} span={4}>
-          <Photo image={image} displayWidth={300} />
+          <a href={`/gallery/image/${image.id}`}>
+            <Photo image={image} displayWidth={300} />
+          </a>
         </GridCol>
       ))}
     </Grid>
