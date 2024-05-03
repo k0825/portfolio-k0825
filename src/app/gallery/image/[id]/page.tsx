@@ -1,5 +1,7 @@
 import { getGalleryImage, getGalleryImageList } from "@/data/galleryImage";
-import { Photo } from "../../../../components/gallery/Photo";
+import Image from "next/image";
+
+import styles from "./page.module.scss";
 
 type Params = {
   id: string;
@@ -21,13 +23,22 @@ type PhotoPageProps = {
 };
 
 export default async function PhotoPage({ params }: PhotoPageProps) {
+  const image_cdn_domain = process.env.IMAGE_CDN_DOMAIN ?? "";
+
   const { id } = params;
 
   const { image } = await getGalleryImage(id);
 
   return (
-    <div>
-      <Photo image={image} />
+    <div style={{ position: "relative", width: "100%", maxHeight: "100%" }}>
+      <Image
+        src={`${image_cdn_domain}/${image.thumb}`}
+        objectFit="contain"
+        alt={image.id}
+        height={image.height}
+        width={image.width}
+        className={styles.photo}
+      />
     </div>
   );
 }
