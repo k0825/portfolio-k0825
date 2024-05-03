@@ -1,7 +1,4 @@
-import {
-  getGalleryImageListRemote,
-  getGalleryImageRemote,
-} from "@/data/galleryImage";
+import { getGalleryImage, getGalleryImageList } from "@/data/galleryImage";
 import { Photo } from "../../../../components/gallery/Photo";
 
 type Params = {
@@ -9,7 +6,7 @@ type Params = {
 };
 
 export const generateStaticParams = async (): Promise<Params[]> => {
-  const { images } = await getGalleryImageListRemote();
+  const { images } = await getGalleryImageList();
   const paths = images.map((image) => {
     return {
       id: image.id,
@@ -26,7 +23,7 @@ type PhotoPageProps = {
 export default async function PhotoPage({ params }: PhotoPageProps) {
   const { id } = params;
 
-  const image = await getGalleryImageRemote(id);
+  const { image } = await getGalleryImage(id);
 
   return (
     <div>

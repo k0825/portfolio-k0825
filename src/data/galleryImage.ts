@@ -15,10 +15,16 @@ export type GalleryImage = {
 };
 
 export type GalleryImageData = {
+  image: GalleryImage;
+};
+
+export type GalleryImageListData = {
   images: GalleryImage[];
 };
 
-export const getGalleryImage = async (id: string): Promise<GalleryImage> => {
+export const getGalleryImage = async (
+  id: string
+): Promise<GalleryImageData> => {
   const dynamodb = new DynamoDBClient({
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
@@ -39,17 +45,18 @@ export const getGalleryImage = async (id: string): Promise<GalleryImage> => {
 
   const items = response.Items || [];
   const item = items[0];
-
-  return {
+  const image = {
     id: item.id.S || "",
     origin: item.original_path.S || "",
     thumb: item.thumbnail_path.S || "",
     height: parseInt(item.height.N || "0"),
     width: parseInt(item.width.N || "0"),
   };
+
+  return { image };
 };
 
-export const getGalleryImageList = async (): Promise<GalleryImageData> => {
+export const getGalleryImageList = async (): Promise<GalleryImageListData> => {
   const dynamodb = new DynamoDBClient({
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
@@ -88,32 +95,4 @@ export const getGalleryImageList = async (): Promise<GalleryImageData> => {
   });
 
   return { images };
-};
-
-const galleryImageParser = z.object({
-  id: z.string(),
-  origin: z.string(),
-  thumb: z.string(),
-  height: z.number(),
-  width: z.number(),
-});
-
-export const getGalleryImageRemote = async (id: string) => {
-  const json = await fetch(`/api/image/${id}`).then(
-    (res) => res.json()
-  );
-  const response = galleryImageParser.parse(json);
-  return response;
-};
-
-const galleryImageListParser = z.object({
-  images: z.array(galleryImageParser),
-});
-
-export const getGalleryImageListRemote = async () => {
-  const json = await fetch("/api/image/list").then((res) =>
-    res.json()
-  );
-  const response = galleryImageListParser.parse(json);
-  return response;
 };
