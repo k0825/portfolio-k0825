@@ -99,7 +99,7 @@ const galleryImageParser = z.object({
 });
 
 export const getGalleryImageRemote = async (id: string) => {
-  const json = await fetch(`http://localhost:3000/api/image/${id}`).then(
+  const json = await fetch(`/api/image/${id}`).then(
     (res) => res.json()
   );
   const response = galleryImageParser.parse(json);
@@ -111,7 +111,7 @@ const galleryImageListParser = z.object({
 });
 
 export const getGalleryImageListRemote = async () => {
-  const json = await fetch("http://localhost:3000/api/image/list").then((res) =>
+  const json = await fetch("/api/image/list").then((res) =>
     res.json()
   );
   const response = galleryImageListParser.parse(json);
