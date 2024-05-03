@@ -12,8 +12,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@mantine/core": "^7.5.3",
-    "@mantine/hooks": "^7.5.3",
+    "@aws-sdk/client-dynamodb": "^3.565.0",
+    "@aws-sdk/credential-providers": "^3.565.0",
+    "@mantine/core": "^7.8.1",
+    "@mantine/dropzone": "^7.8.1",
+    "@mantine/hooks": "^7.8.1",
     "@mantinex/mantine-logo": "^1.0.1",
     "@tabler/icons-react": "^2.47.0",
     "clsx": "^2.1.0",
