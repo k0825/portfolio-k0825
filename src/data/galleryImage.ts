@@ -1,20 +1,24 @@
-import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
+import {
+  AttributeValue,
+  DynamoDBClient,
+  QueryCommand,
+  ScanCommand,
+} from "@aws-sdk/client-dynamodb";
+import { z } from "zod";
 
 export type GalleryImage = {
   id: string;
   origin: string;
   thumb: string;
+  height: number;
+  width: number;
 };
 
 export type GalleryImageData = {
   images: GalleryImage[];
-  lastEvaluatedKey?: string;
 };
 
-export const getGalleryImageList = async (
-  limit: number,
-  startsKey: string | null
-): Promise<GalleryImageData> => {
+export const getGalleryImage = async (id: string): Promise<GalleryImage> => {
   const dynamodb = new DynamoDBClient({
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
@@ -24,23 +28,92 @@ export const getGalleryImageList = async (
   });
   const tableName = "ikari_photo_library_mapping_table";
   const response = await dynamodb.send(
-    new ScanCommand({
+    new QueryCommand({
       TableName: tableName,
-      Limit: limit,
-      ExclusiveStartKey: startsKey ? { id: { S: startsKey } } : undefined,
+      KeyConditionExpression: "id = :id",
+      ExpressionAttributeValues: {
+        ":id": { S: id },
+      },
     })
   );
 
   const items = response.Items || [];
+  const item = items[0];
+
+  return {
+    id: item.id.S || "",
+    origin: item.original_path.S || "",
+    thumb: item.thumbnail_path.S || "",
+    height: parseInt(item.height.N || "0"),
+    width: parseInt(item.width.N || "0"),
+  };
+};
+
+export const getGalleryImageList = async (): Promise<GalleryImageData> => {
+  const dynamodb = new DynamoDBClient({
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
+    },
+    region: process.env.AWS_DEFAULT_REGION || "",
+  });
+  const tableName = "ikari_photo_library_mapping_table";
+
+  const items: Record<string, AttributeValue>[] = [];
+  const query = async (exclusiveStartKey?: Record<string, AttributeValue>) => {
+    const response = await dynamodb.send(
+      new ScanCommand({
+        TableName: tableName,
+        ExclusiveStartKey: exclusiveStartKey,
+      })
+    );
+
+    items.push(...(response.Items || []));
+
+    if (response.LastEvaluatedKey) {
+      await query(response.LastEvaluatedKey);
+    }
+  };
+
+  await query();
+
   const images = items.map((item) => {
     return {
       id: item.id.S || "",
       origin: item.original_path.S || "",
       thumb: item.thumbnail_path.S || "",
+      height: parseInt(item.height.N || "0"),
+      width: parseInt(item.width.N || "0"),
     };
   });
 
-  const lastEvaluatedKey = response.LastEvaluatedKey?.id.S;
+  return { images };
+};
 
-  return { images, lastEvaluatedKey };
+const galleryImageParser = z.object({
+  id: z.string(),
+  origin: z.string(),
+  thumb: z.string(),
+  height: z.number(),
+  width: z.number(),
+});
+
+export const getGalleryImageRemote = async (id: string) => {
+  const json = await fetch(`http://localhost:3000/api/image/${id}`).then(
+    (res) => res.json()
+  );
+  const response = galleryImageParser.parse(json);
+  return response;
+};
+
+const galleryImageListParser = z.object({
+  images: z.array(galleryImageParser),
+});
+
+export const getGalleryImageListRemote = async () => {
+  const json = await fetch("http://localhost:3000/api/image/list").then((res) =>
+    res.json()
+  );
+  const response = galleryImageListParser.parse(json);
+  return response;
 };
