@@ -1,5 +1,4 @@
 import { BlogList } from "@/components/blog/blogList/BlogList";
-import { Drop } from "@/components/drop/Drop";
 import { getBlogs } from "@/data/microcms";
 
 export default async function Blog() {
