@@ -1,5 +1,7 @@
 import { GalleryImage } from "@/data/galleryImage";
 import styles from "./ImageModal.module.scss";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { ActionIcon } from "@mantine/core";
 
 type ImageModalProps = {
   isOpen: boolean;
@@ -19,15 +21,23 @@ export const ImageModal = ({
   return (
     <div>
       {isOpen && (
-        <div className={styles.container} onClick={onClose}>
-          <img
-            src={`https://d1lyij0osd7mgq.cloudfront.net/${image.thumb}`}
-            alt={image.id}
-            className={styles.photo}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+        <>
+          <div className={styles.container} onClick={onClose}>
+            <img
+              src={`https://d1lyij0osd7mgq.cloudfront.net/${image.thumb}`}
+              alt={image.id}
+              className={styles.photo}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <ActionIcon onClick={prev}>
+            <IconChevronLeft />
+          </ActionIcon>
+          <ActionIcon onClick={next}>
+            <IconChevronRight />
+          </ActionIcon>
+        </>
       )}
     </div>
   );
