@@ -4,6 +4,18 @@
   padding-right: var(--mantine-spacing-md);
   border-bottom: 1px solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+
+  @media (max-width: 47.5em) {
+    &[data-desktop] {
+      display: none;
+    }
+  }
+
+  @media (min-width: 47.5em) {
+    &[data-mobile] {
+      display: none;
+    }
+  }
 }
 
 .link {
