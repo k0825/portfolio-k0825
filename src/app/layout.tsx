@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Header } from "@/components/header/Header";
-import { Footer } from "@/components/footer/Footer";
-import { Container, MantineProvider } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 import "@mantine/dropzone/styles.css";
@@ -23,15 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <MantineProvider>
-          <Header />
-          <main>
-            <Container size="md" mt={30}>
-              {children}
-            </Container>
-          </main>
-          <Footer />
-        </MantineProvider>
+        <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
   );
