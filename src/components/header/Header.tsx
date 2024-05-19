@@ -22,7 +22,7 @@ export const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-desktop="true">
       <Container size="lg">
         <div className={styles.container}>
           <ProfileLogo />
