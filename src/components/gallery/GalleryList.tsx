@@ -39,7 +39,7 @@ export const GalleryList = ({ images }: GalleryListProps): JSX.Element => {
   return (
     <>
       <SimpleGrid
-        cols={{ base: 1, sm: 2, md: 3, lg: 3 }}
+        cols={{ base: 2, sm: 2, md: 3, lg: 3 }}
         spacing={"sm"}
         verticalSpacing={"sm"}
       >
