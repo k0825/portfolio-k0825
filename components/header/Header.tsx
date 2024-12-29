@@ -2,13 +2,11 @@
 
 import {
   Container,
-  Group,
   useComputedColorScheme,
   useMantineColorScheme,
 } from "@mantine/core";
 import styles from "./Header.module.scss";
 import { ProfileLogo } from "../profileLogo/ProfileLogo";
-import Link from "next/link";
 import { LightDarkButton } from "../lightDarkButton/LightDarkButton";
 
 export const Header = () => {
@@ -26,18 +24,7 @@ export const Header = () => {
       <Container size="lg">
         <div className={styles.container}>
           <ProfileLogo />
-          <Group gap={5}>
-            <Link href="/" className={styles.link}>
-              HOME
-            </Link>
-            <Link href="/blog" className={styles.link}>
-              BLOG
-            </Link>
-            <Link href="/gallery" className={styles.link}>
-              GALLERY
-            </Link>
-            <LightDarkButton useLightDark={useLightDark} />
-          </Group>
+          <LightDarkButton useLightDark={useLightDark} />
         </div>
       </Container>
     </header>

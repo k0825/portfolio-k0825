@@ -15,26 +15,11 @@ type TemplateProps = {
 };
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleMenuClick = () => {
-    setIsMenuOpen(true);
-  };
-
-  const handleCloseClick = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
     <>
       <Header />
-      <HeaderSmp
-        onMemuClick={handleMenuClick}
-        onCloseClick={handleCloseClick}
-        isMenuOpen={isMenuOpen}
-      />
+      <HeaderSmp />
       <main className={styles.main}>
-        <NavSmp isMenuOpen={isMenuOpen} />
         <Container size="md" mt={30}>
           {children}
         </Container>

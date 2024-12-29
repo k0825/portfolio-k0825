@@ -1,5 +1,4 @@
 import { Avatar, Text } from "@mantine/core";
-
 import styles from "./ProfileLogo.module.scss";
 
 export const ProfileLogo = () => {

@@ -1,6 +1,5 @@
 import { getPosts } from "@/data/posts";
 import { Text, Title } from "@mantine/core";
-
 import styles from "./Zenn.module.scss";
 import { ZennIcon } from "../icons/ZennIcon";
 

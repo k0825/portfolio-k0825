@@ -1,5 +1,4 @@
 import { Container, Text } from "@mantine/core";
-
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {

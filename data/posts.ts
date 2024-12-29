@@ -15,11 +15,11 @@ type Posts = {
 
 export const getPosts = cache(async (): Promise<Posts> => {
   const feed = await new Parser().parseURL("https://zenn.dev/ikarin0825/feed");
-  const items: PostItem[] = feed.items.map((item) => {
+  const items: PostItem[] = feed.items.map(({ title, pubDate, link }) => {
     return {
-      title: item.title ?? "",
-      date: item.pubDate ? dayjs(item.pubDate).format("YYYY-MM-DD") : "",
-      link: item.link ?? "https://zenn.dev/ikarin0825",
+      title: title ?? "",
+      date: pubDate ? dayjs(pubDate).format("YYYY-MM-DD") : "",
+      link: link ?? "https://zenn.dev/ikarin0825",
     };
   });
 
