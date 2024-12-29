@@ -6,7 +6,7 @@ export const Skills = () => {
       <Title order={1} mt={30} mb={10}>
         Skills
       </Title>
-      <Text>Next.js, TypeScript, JavaScript, Go, AWS</Text>
+      <Text>Next.js, Laravel, TypeScript, JavaScript, Go, PHP, AWS</Text>
     </>
   );
 };
