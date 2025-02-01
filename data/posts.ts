@@ -1,4 +1,3 @@
-import { cache } from "react";
 import dayjs from "dayjs";
 import Parser from "rss-parser";
 
@@ -13,7 +12,7 @@ type Posts = {
   totalCount: number;
 };
 
-export const getPosts = cache(async (): Promise<Posts> => {
+export const getPosts = async (): Promise<Posts> => {
   const feed = await new Parser().parseURL("https://zenn.dev/ikarin0825/feed");
   const items: PostItem[] = feed.items.map(({ title, pubDate, link }) => {
     return {
@@ -27,4 +26,4 @@ export const getPosts = cache(async (): Promise<Posts> => {
     pagePosts: items,
     totalCount: items.length,
   };
-});
+};
