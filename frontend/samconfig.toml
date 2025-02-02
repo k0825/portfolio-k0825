@@ -18,7 +18,6 @@ confirm_changeset = true
 resolve_s3 = true
 s3_prefix = "portfolio"
 region = "ap-northeast-1"
-profile = "admin"
 image_repositories = ["PortfolioFunction=525799718758.dkr.ecr.ap-northeast-1.amazonaws.com/portfoliob68e15f2/portfoliofunctionb25f1812repo"]
 
 [default.package.parameters]
