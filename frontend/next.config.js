@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "standalone",
   images: {
-    domains: ["d1lyij0osd7mgq.cloudfront.net"],
+    domains: ["d3nu1pf5s8i6xp.cloudfront.net"],
   },
 };
 
