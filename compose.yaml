@@ -2,10 +2,10 @@ version: "3"
 services:
   frontend:
     build:
-      context: .
+      context: frontend
     tty: true
     volumes:
-      - ./:/frontend
+      - .:/workspace
     ports:
       - 3000:3000
-    command: sh -c "pnpm dev"
+    command: sleep infinity

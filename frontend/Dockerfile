@@ -1,4 +1,3 @@
 FROM node:20
 
-RUN corepack enable
-WORKDIR /frontend
+RUN npm install -g pnpm@latest-10

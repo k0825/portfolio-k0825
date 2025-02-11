@@ -1,0 +1,57 @@
+{
+	"name": "Frontend Container",
+	"dockerComposeFile": [
+		"../../compose.yaml"
+	],
+	"service": "frontend",
+	"workspaceFolder": "/workspace/frontend",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"cssVariables.lookupFiles": [
+					"**/*.css",
+					"**/*.scss",
+					"**/*.sass",
+					"**/*.less",
+					"node_modules/@mantine/core/styles.css"
+				],
+				"editor.formatOnSave": true,
+				// 各ファイルのデフォルトのフォーマッターを指定
+				"[javascript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[javascriptreact]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[typescriptreact]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[json]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[postcss]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[css]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				// ESLintの対象を設定
+				"eslint.validate": [
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact"
+				]
+			},
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"github.copilot",
+				"github.copilot-chat"
+			]
+		}
+	}
+}
