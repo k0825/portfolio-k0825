@@ -22,6 +22,14 @@ resource "aws_lambda_function" "lambda" {
 
 resource "aws_lambda_function_url" "lambda_url" {
   function_name      = aws_lambda_function.lambda.function_name
-  authorization_type = "NONE"
+  authorization_type = "AWS_IAM"
   invoke_mode        = "RESPONSE_STREAM"
+}
+
+resource "aws_lambda_permission" "lambda_permission" {
+  statement_id  = "AllowExecutionFromCloudFront"
+  action        = "lambda:InvokeFunctionUrl"
+  function_name = aws_lambda_function.lambda.function_name
+  principal     = "cloudfront.amazonaws.com"
+  source_arn    = aws_cloudfront_distribution.distribution.arn
 }
