@@ -28,6 +28,24 @@ resource "aws_cloudfront_distribution" "distribution" {
     trusted_signers        = []
     viewer_protocol_policy = "redirect-to-https"
   }
+  ordered_cache_behavior {
+    path_pattern           = "/_next/image/*"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    compress               = true
+    min_ttl                = 0
+    default_ttl            = 86400
+    max_ttl                = 31536000
+    target_origin_id       = local.origin_id
+    viewer_protocol_policy = "redirect-to-https"
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
   origin {
     domain_name              = replace(replace(aws_lambda_function_url.lambda_url.function_url, "https://", ""), "/", "")
     origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
