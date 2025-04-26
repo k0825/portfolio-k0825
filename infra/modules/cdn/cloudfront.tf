@@ -20,12 +20,7 @@ resource "aws_cloudfront_distribution" "distribution" {
     cache_policy_id        = data.aws_cloudfront_cache_policy.cache_policy.id
     cached_methods         = ["GET", "HEAD"]
     compress               = true
-    default_ttl            = 0
-    max_ttl                = 0
-    min_ttl                = 0
     target_origin_id       = local.origin_id
-    trusted_key_groups     = []
-    trusted_signers        = []
     viewer_protocol_policy = "redirect-to-https"
   }
   ordered_cache_behavior {
