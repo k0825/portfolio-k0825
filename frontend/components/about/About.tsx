@@ -3,6 +3,7 @@ import styles from "./About.module.scss";
 import { GitHubIcon } from "../icons/GitHubIcon";
 import { XIcon } from "../icons/XIcon";
 import { ZennIcon } from "../icons/ZennIcon";
+import Image from "next/image";
 
 export const About = (): JSX.Element => {
   return (
@@ -12,7 +13,9 @@ export const About = (): JSX.Element => {
       </Title>
       <section className={styles.about}>
         <div className={styles.profile}>
-          <Avatar src="profile.jpeg" size={120} radius={120} mx="auto" />
+          <Avatar size={120} radius={120} mx="auto">
+            <Image src="/profile.jpeg" alt="Profile" width={120} height={120} />
+          </Avatar>
           <Title order={2}>Kazukiyo Ikarigawa</Title>
           <div className={styles.logos}>
             <a href="https://github.com/k0825" className={styles.link}>
