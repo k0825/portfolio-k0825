@@ -10,7 +10,6 @@ updates:
         patterns:
           - "next"
           - "eslint-config-next"
-          - "@storybook/nextjs"
       react:
         patterns:
           - "react"
