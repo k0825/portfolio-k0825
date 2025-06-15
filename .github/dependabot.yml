@@ -46,3 +46,4 @@ updates:
           - "postcss-simple-vars"
       others:
         patterns:
+          - "*"
