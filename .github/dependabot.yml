@@ -10,3 +10,8 @@ updates:
     directory: ".devcontainer"
     schedule:
       interval: weekly
+
+  - package-ecosystem: "node"
+    directory: "."
+    schedule:
+      interval: weekly
