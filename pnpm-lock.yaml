@@ -24,8 +24,8 @@ importers:
         specifier: ^7.8.1
         version: 7.9.0(react@18.2.0)
       '@mantinex/mantine-logo':
-        specifier: ^1.0.1
-        version: 1.0.1(@mantine/core@7.9.0(@mantine/hooks@7.9.0(react@18.2.0))(@types/react@18.2.61)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.9.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^2.0.0
+        version: 2.0.0(@mantine/core@7.9.0(@mantine/hooks@7.9.0(react@18.2.0))(@types/react@18.2.61)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.9.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@tabler/icons-react':
         specifier: ^2.47.0
         version: 2.47.0(react@18.2.0)
@@ -1239,13 +1239,13 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@mantinex/mantine-logo@1.0.1':
-    resolution: {integrity: sha512-t5Lp4Bpae+EVydBr5n0bDG6EXhQ3QY/fw29PCvnwn9LwWReIaYUKhQ4mRINyb7ted2R3MuG7VS1MZQcJ1Qh6Cg==}
+  '@mantinex/mantine-logo@2.0.0':
+    resolution: {integrity: sha512-HfO0twXEMoGftJGTVaixwI7ABUmyBafT/AQQM1MWKw4Q4ZwjMURKBxhz5JFGhc4MHysKRo2E3jaAtXuHydyfcA==}
     peerDependencies:
       '@mantine/core': '>=7.0.0'
       '@mantine/hooks': '>=7.0.0'
-      react: ^18.2.0
-      react-dom: ^18.2.0
+      react: ^18.x || ^19.x
+      react-dom: ^18.x || ^19.x
 
   '@mdx-js/react@2.3.0':
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
@@ -7860,7 +7860,7 @@ snapshots:
     dependencies:
       react: 18.2.0
 
-  '@mantinex/mantine-logo@1.0.1(@mantine/core@7.9.0(@mantine/hooks@7.9.0(react@18.2.0))(@types/react@18.2.61)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.9.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mantinex/mantine-logo@2.0.0(@mantine/core@7.9.0(@mantine/hooks@7.9.0(react@18.2.0))(@types/react@18.2.61)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.9.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@mantine/core': 7.9.0(@mantine/hooks@7.9.0(react@18.2.0))(@types/react@18.2.61)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@mantine/hooks': 7.9.0(react@18.2.0)
