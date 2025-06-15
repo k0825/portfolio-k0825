@@ -1,10 +1,11 @@
 import { Avatar, Text } from "@mantine/core";
 import styles from "./ProfileLogo.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ProfileLogo = () => {
   return (
-    <a href="/" className={styles.link}>
+    <Link href="/" className={styles.link}>
       <div className={styles.logo}>
         <Avatar size={28} radius={28} mx="auto">
           <Image src="/profile.jpeg" alt="Profile" width={28} height={28} />
@@ -13,6 +14,6 @@ export const ProfileLogo = () => {
           k0825
         </Text>
       </div>
-    </a>
+    </Link>
   );
 };
