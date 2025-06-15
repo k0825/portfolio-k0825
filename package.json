@@ -39,7 +39,7 @@
     "@storybook/addon-styling-webpack": "^0.0.6",
     "@storybook/blocks": "^7.6.17",
     "@storybook/nextjs": "^7.6.17",
-    "@storybook/preview-api": "^7.6.17",
+    "@storybook/preview-api": "^8.1.11",
     "@storybook/react": "^7.6.17",
     "@storybook/test": "^7.6.17",
     "@types/node": "^20",
