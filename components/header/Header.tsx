@@ -8,8 +8,9 @@ import {
 import styles from "./Header.module.scss";
 import { ProfileLogo } from "../profileLogo/ProfileLogo";
 import { LightDarkButton } from "../lightDarkButton/LightDarkButton";
+import { JSX } from "react";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,

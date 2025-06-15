@@ -1,6 +1,7 @@
 import { Text, Timeline, TimelineItem, Title } from "@mantine/core";
+import { JSX } from "react";
 
-export const Experience = () => {
+export const Experience = (): JSX.Element => {
   return (
     <>
       <Title order={1} mt={30} mb={10}>

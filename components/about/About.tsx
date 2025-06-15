@@ -4,6 +4,7 @@ import { GitHubIcon } from "../icons/GitHubIcon";
 import { XIcon } from "../icons/XIcon";
 import { ZennIcon } from "../icons/ZennIcon";
 import Image from "next/image";
+import { JSX } from "react";
 
 export const About = (): JSX.Element => {
   return (
