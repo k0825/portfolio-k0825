@@ -3,4 +3,46 @@ updates:
   - package-ecosystem: "npm"
     directory: "."
     schedule:
-      interval: weekly
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      nextjs:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+          - "@storybook/nextjs"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+          - "react-modal"
+          - "@types/react-modal"
+          - "clsx"
+          - "html-react-parser"
+          - "@tabler/icons-react"
+      mantine:
+        patterns:
+          - "@mantine/*"
+          - "@mantinex/mantine-logo"
+          - "postcss-preset-mantine"
+      aws:
+        patterns:
+          - "@aws-sdk/*"
+      storybook:
+        patterns:
+          - "storybook"
+          - "@storybook/*"
+          - "storybook-dark-mode"
+          - "eslint-plugin-storybook"
+      style:
+        patterns:
+          - "sass"
+          - "sass-loader"
+          - "css-loader"
+          - "style-loader"
+          - "postcss"
+          - "postcss-simple-vars"
+      others:
+        patterns:
