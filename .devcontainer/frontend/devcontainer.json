@@ -3,8 +3,8 @@
 	"dockerComposeFile": [
 		"../../compose.yaml"
 	],
-	"service": "frontend",
-	"workspaceFolder": "/workspace/frontend",
+	"service": "portfolio",
+	"workspaceFolder": "/workspace/",
 	"customizations": {
 		"vscode": {
 			"settings": {

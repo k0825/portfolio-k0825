@@ -1,8 +1,7 @@
-version: "3"
 services:
-  frontend:
+  portfolio:
     build:
-      context: frontend
+      context: portfolio
     tty: true
     volumes:
       - .:/workspace
