@@ -14,9 +14,9 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.828.0",
     "@aws-sdk/credential-providers": "^3.828.0",
-    "@mantine/core": "^8.1.0",
-    "@mantine/dropzone": "^8.1.0",
-    "@mantine/hooks": "^8.1.0",
+    "@mantine/core": "^8.1.1",
+    "@mantine/dropzone": "^8.1.1",
+    "@mantine/hooks": "^8.1.1",
     "@mantinex/mantine-logo": "^2.0.0",
     "@tabler/icons-react": "^3.34.0",
     "clsx": "^2.1.1",
