@@ -9,6 +9,11 @@ export const Qualifications = () => {
       link: "https://www.credly.com/badges/1692f243-3262-4541-a74a-420165c62a0f/public_url",
       image: "/saa.png",
     },
+    {
+      name: "AWS Certified Solutions Architect – Professional",
+      link: "http://www.credly.com/badges/e0e119e4-a4f8-495e-9ed8-bbb78d33bb91/public_url",
+      image: "/sap.png",
+    },
   ];
 
   return (
